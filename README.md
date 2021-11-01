@@ -8,11 +8,11 @@ The files in this repository were used to configure the network depicted below.
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the YAML Playbook file may be used to install only certain pieces of it, such as Filebeat.
 
   - _[DVWA](https://github.com/andixlund/ElkStack/blob/main/Ansible/DVWA-playbook.yml)_  
-  - _[ELK Installation](https://github.com/andixlund/ElkStack/blob/main/Ansible/Install-ELK.yml)_ 
+  - _[ELK Installation](https://github.com/andixlund/ElkStack/blob/main/Ansible/Install-ELK.yml)_
   - _[Filebeat](https://github.com/andixlund/ElkStack/blob/main/Ansible/filebeat-playbook.yml)_
   - _[Metricbeat](https://github.com/andixlund/ElkStack/blob/main/Ansible/metricbeat-playbook.yml)_
-  
-  
+
+
 #### This document contains the following details:
 - Description of the Topology
 - Access Policies
@@ -50,12 +50,12 @@ The configuration details of each machine may be found below.
 The machines on the internal network are not exposed to the public Internet.
 
 Only the jumpbox machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- 107.184.93.102
+- *107.184.93.102*
 
 Machines within the network can only be accessed by the jumpbox.
-- jumpbox
-    - Public IP: 40.121.163.19
-    - Private IP: 10.0.0.5
+- *jumpbox*
+    - *Public IP: 40.121.163.19*
+    - *Private IP: 10.0.0.5*
 
 
 A summary of the access policies in place can be found in the table below.
@@ -70,16 +70,14 @@ A summary of the access policies in place can be found in the table below.
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_
-- The main advantage of automating configuration with Ansible is the ability to quickly configure complex processes without too much opportunity for error.
+- *The main advantage of automating configuration with Ansible is the ability to quickly configure complex processes without too much opportunity for error.*
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- Install docker: installs the docker code to the server
-- Install python3-pip module:
-- Install docker module for pip3:
-- Increase/Use more memory: Provides enough memory capacity for the ELK server to run successfully
-- Download and launch ELK container:
+- *Install docker: installs the docker code to the server*
+- *Install python3-pip module: installs the pip module, which allows for package management*
+- *Install docker module for pip3: installs docker modules for pip*
+- *Increase/Use more memory: Provides enough memory capacity for the ELK server to run successfully*
+- *Download and launch ELK container: downloads and launches the ELK container via specified ports*
 
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
@@ -88,29 +86,25 @@ The following screenshot displays the result of running `docker ps` after succes
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- 10.0.0.6
-- 10.0.0.11
-- 10.0.0.12
+- *10.0.0.6*
+- *10.0.0.11*
+- *10.0.0.12*
 
 We have installed the following Beats on these machines:
-- Filebeat and Metricbeat on DVWA 1,2, and 3
+- *Filebeat and Metricbeat on DVWA 1,2, and 3*
 
 These Beats allow us to collect the following information from each machine:
-- Filebeat collects XXXXX
-
-- Metricbeat collects XXXXX
+- *Filebeat collects log data.*
+- *Metricbeat collects data from system usage.*
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned:
 
 SSH into the control node and follow the steps below:
-- Copy the _____ file to _____.
-- Update the _____ file to include...
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
+- Copy the *elk-install.yml* file to */etc/ansible/roles/elk-install.yml*.
+- Update the *hosts* file to include the name and IP of the server on which you wish to install Elk
+- <img width="739" alt="hosts" src="https://user-images.githubusercontent.com/81398383/139729580-7cb1af7e-553d-472f-9bb3-4786204bea14.png">
+- Run the playbook, and navigate to *http://[your_elk_server_ip]:5601/app/kibana* to check that the installation worked as expected.
 
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
