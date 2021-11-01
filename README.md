@@ -104,7 +104,7 @@ SSH into the control node and follow the steps below:
 - Copy the *elk-install.yml* file to */etc/ansible/roles/elk-install.yml*.
 - Update the *hosts* file to include the name and IP of the server on which you wish to install Elk
 - <img width="380" alt="hosts" src="https://user-images.githubusercontent.com/81398383/139732146-349c925a-f4cf-4825-ad78-3be87dbc42f8.png">
-- Run the playbook, and navigate to *http://[your_elk_server_ip]:5601/app/kibana* to check that the installation worked as expected.
-
-
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+- Run the playbook: *ansible-playbook /etc/ansible/roles/elk-install.yml*
+- Navigate to *http://[your_elk_server_ip]:5601/app/kibana* to check that the installation worked as expected.
+- If configured correctly, you'll see a similar output:
+<img width="1130" alt="ELKServerup" src="https://user-images.githubusercontent.com/81398383/139742622-5dc575c5-c0b1-4b1e-a1c4-7e977bcdcccd.png">
